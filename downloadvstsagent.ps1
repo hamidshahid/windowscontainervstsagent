@@ -1,4 +1,4 @@
-$SourcePath = "https://1drv.ms/u/s!Akq1AFMYVVntx1xIHsDaDYxTOfgB"
+$SourcePath = "http://bit.ly/2eKPPPQ"
 $DestinationPath = "C:\vstsagent"
 
 $EditionId = (Get-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion' -Name 'EditionID').EditionId
