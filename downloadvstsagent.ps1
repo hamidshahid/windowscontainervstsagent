@@ -15,6 +15,7 @@ if (($EditionId -eq "ServerStandardNano") -or
     ($EditionId -eq "ServerTuva")) {
 
     $TempPath = [System.IO.Path]::GetTempFileName()
+    echo $TempPath
     if (($SourcePath -as [System.URI]).AbsoluteURI -ne $null)
     {
         $handler = New-Object System.Net.Http.HttpClientHandler
@@ -43,6 +44,6 @@ if (($EditionId -eq "ServerStandardNano") -or
     {
         throw "Cannot copy from $SourcePath"
     }
-    [System.IO.Compression.ZipFile]::ExtractToDirectory($TempPath, $DestinationPath)
-    Remove-Item $TempPath
+
+    Expand-Archive -Path $TempPath -DestinationPath $DestinationPath
 }
