@@ -6,6 +6,7 @@ $EditionId = (Get-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\Windows NT\Curren
 if (($EditionId -eq "ServerStandardNano") -or
     ($EditionId -eq "ServerDataCenterNano") -or
     ($EditionId -eq "NanoServer") -or
+    ($EditionId -eq "ServerDatacenter") -or    
     ($EditionId -eq "ServerTuva")) {
 
     $TempPath = [System.IO.Path]::GetTempFileName()
