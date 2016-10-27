@@ -1,6 +1,11 @@
 $SourcePath = "http://bit.ly/2eKPPPQ"
 $DestinationPath = "C:\vstsagent"
 
+If(!(test-path $DestinationPath))
+{
+    New-Item -ItemType Directory -Force -Path $DestinationPath
+}
+
 $EditionId = (Get-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion' -Name 'EditionID').EditionId
 
 if (($EditionId -eq "ServerStandardNano") -or
